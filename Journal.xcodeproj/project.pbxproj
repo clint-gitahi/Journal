@@ -12,6 +12,10 @@
 		2B7E3402222E29DF004A2BC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B7E3400222E29DF004A2BC4 /* Main.storyboard */; };
 		2B7E3404222E29E2004A2BC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B7E3403222E29E2004A2BC4 /* Assets.xcassets */; };
 		2B7E3407222E29E2004A2BC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B7E3405222E29E2004A2BC4 /* LaunchScreen.storyboard */; };
+		2BF4433B222EA3D500243A83 /* JournalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF4433A222EA3D500243A83 /* JournalDetailViewController.swift */; };
+		2BF4433D222EA41F00243A83 /* JournalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF4433C222EA41F00243A83 /* JournalTableViewController.swift */; };
+		2BF4433F222EA46500243A83 /* CreateJournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF4433E222EA46500243A83 /* CreateJournalViewController.swift */; };
+		2BF44341222EA48C00243A83 /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF44340222EA48C00243A83 /* PhotoCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		2B7E3403222E29E2004A2BC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B7E3406222E29E2004A2BC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B7E3408222E29E2004A2BC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BF4433A222EA3D500243A83 /* JournalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalDetailViewController.swift; sourceTree = "<group>"; };
+		2BF4433C222EA41F00243A83 /* JournalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalTableViewController.swift; sourceTree = "<group>"; };
+		2BF4433E222EA46500243A83 /* CreateJournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateJournalViewController.swift; sourceTree = "<group>"; };
+		2BF44340222EA48C00243A83 /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +65,10 @@
 				2B7E33FC222E29DF004A2BC4 /* AppDelegate.swift */,
 				2B7E33FE222E29DF004A2BC4 /* ViewController.swift */,
 				2B7E3400222E29DF004A2BC4 /* Main.storyboard */,
+				2BF4433C222EA41F00243A83 /* JournalTableViewController.swift */,
+				2BF4433E222EA46500243A83 /* CreateJournalViewController.swift */,
+				2BF44340222EA48C00243A83 /* PhotoCollectionViewController.swift */,
+				2BF4433A222EA3D500243A83 /* JournalDetailViewController.swift */,
 				2B7E3403222E29E2004A2BC4 /* Assets.xcassets */,
 				2B7E3405222E29E2004A2BC4 /* LaunchScreen.storyboard */,
 				2B7E3408222E29E2004A2BC4 /* Info.plist */,
@@ -136,7 +148,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B7E33FF222E29DF004A2BC4 /* ViewController.swift in Sources */,
+				2BF44341222EA48C00243A83 /* PhotoCollectionViewController.swift in Sources */,
+				2BF4433B222EA3D500243A83 /* JournalDetailViewController.swift in Sources */,
+				2BF4433D222EA41F00243A83 /* JournalTableViewController.swift in Sources */,
 				2B7E33FD222E29DF004A2BC4 /* AppDelegate.swift in Sources */,
+				2BF4433F222EA46500243A83 /* CreateJournalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
