@@ -23,7 +23,28 @@ class CreateJournalViewController: UIViewController {
         navBar.isTranslucent = false
         navBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         aboveNavBarView.backgroundColor = UIColor(red: 0.298, green: 0.757, blue: 0.988, alpha: 1.00)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
     }
+    
+    @objc func keyboardWillHide(notification: Notification) {
+        changeKeyboardHeight(notification: notification)
+    }
+    
+    @objc func keyboardWillShow(notification:Notification) {
+        changeKeyboardHeight(notification: notification)
+    }
+    
+    func changeKeyboardHeight(notification:Notification) {
+        if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyHeight = keyboardFrame.cgRectValue.height
+            bottomConstraint.constant = keyHeight + 10
+        }
+    }
+    
     @IBAction func cancelTapped(_ sender: Any) {
         
     }
