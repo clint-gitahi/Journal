@@ -20,20 +20,13 @@ class JournalTableViewController: UITableViewController {
     }
 
     @IBAction func cameraTapped(_ sender: Any) {
+        performSegue(withIdentifier: "goToNew", sender: "camera")
     }
     @IBAction func addTapped(_ sender: Any) {
-    }
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        performSegue(withIdentifier: "goToNew", sender: nil)
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("prepaing for segue")
+    }
 }

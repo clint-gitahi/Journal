@@ -145,20 +145,135 @@
             </objects>
             <point key="canvasLocation" x="504.80000000000001" y="-1338.08095952024"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Journal View Controller-->
         <scene sceneID="ReO-K4-lwN">
             <objects>
-                <viewController id="bKS-NB-5Ld" sceneMemberID="viewController">
+                <viewController id="bKS-NB-5Ld" customClass="CreateJournalViewController" customModule="Journal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3tx-th-HWu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MR0-rl-lHR">
+                                <rect key="frame" x="0.0" y="20" width="375" height="0.0"/>
+                                <items>
+                                    <navigationItem title="Title" id="bub-zc-euf">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="OGh-oh-cra">
+                                            <connections>
+                                                <action selector="cancelTapped:" destination="bKS-NB-5Ld" id="Pdu-Za-Qb0"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Lod-Pe-vbL">
+                                            <connections>
+                                                <action selector="saveTapped:" destination="bKS-NB-5Ld" id="pc8-Yb-oOl"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NgK-H5-xtL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="f9v-7o-eeY">
+                                <rect key="frame" x="0.0" y="68" width="375" height="466"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="466" id="eAK-x6-U4Q"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtq-ew-FtW">
+                                <rect key="frame" x="0.0" y="481" width="375" height="30"/>
+                                <state key="normal" title="Set Date"/>
+                                <connections>
+                                    <action selector="setDateTapped:" destination="bKS-NB-5Ld" eventType="touchUpInside" id="CL7-Tg-7VG"/>
+                                </connections>
+                            </button>
+                            <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="3dE-tc-n8P">
+                                <rect key="frame" x="0.0" y="218" width="375" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="573534821.68177605">
+                                    <!--2019-03-06 03:13:41 +0000-->
+                                </date>
+                            </datePicker>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6nD-ta-Baz">
+                                <rect key="frame" x="16" y="542" width="343" height="105"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aMC-Ln-cln">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="105"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9eQ-Y0-IrV">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="105"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="Ysl-dq-wzo"/>
+                                                </constraints>
+                                                <state key="normal" image="calendar"/>
+                                                <connections>
+                                                    <action selector="blueCalendarTapped:" destination="bKS-NB-5Ld" eventType="touchUpInside" id="1GH-gz-ord"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6mw-1u-Lly">
+                                                <rect key="frame" x="80" y="0.0" width="70" height="105"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="axC-hG-uni"/>
+                                                </constraints>
+                                                <state key="normal" image="blueCamera"/>
+                                                <connections>
+                                                    <action selector="blueCameraTapped:" destination="bKS-NB-5Ld" eventType="touchUpInside" id="VQd-4g-GQX"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="aMC-Ln-cln" secondAttribute="trailing" id="JZf-Gz-PgF"/>
+                                    <constraint firstItem="aMC-Ln-cln" firstAttribute="leading" secondItem="6nD-ta-Baz" secondAttribute="leading" id="XJl-iC-nDL"/>
+                                    <constraint firstItem="aMC-Ln-cln" firstAttribute="height" secondItem="6nD-ta-Baz" secondAttribute="height" id="iSI-5q-yrp"/>
+                                    <constraint firstItem="aMC-Ln-cln" firstAttribute="top" secondItem="6nD-ta-Baz" secondAttribute="top" id="wFu-e9-VEH"/>
+                                    <constraint firstAttribute="bottom" secondItem="aMC-Ln-cln" secondAttribute="bottom" id="yMb-3K-TiM"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PxN-S4-EjQ" firstAttribute="trailing" secondItem="f9v-7o-eeY" secondAttribute="trailing" id="0VQ-wD-szR"/>
+                            <constraint firstItem="f9v-7o-eeY" firstAttribute="top" secondItem="MR0-rl-lHR" secondAttribute="bottom" constant="48" id="0ke-az-UYV"/>
+                            <constraint firstAttribute="bottom" secondItem="6nD-ta-Baz" secondAttribute="bottom" constant="20" symbolic="YES" id="2Gb-pw-ssu"/>
+                            <constraint firstItem="f9v-7o-eeY" firstAttribute="leading" secondItem="PxN-S4-EjQ" secondAttribute="leading" id="Djc-8k-knT"/>
+                            <constraint firstItem="6nD-ta-Baz" firstAttribute="top" secondItem="f9v-7o-eeY" secondAttribute="bottom" constant="8" symbolic="YES" id="Fqm-b6-MFS"/>
+                            <constraint firstItem="MR0-rl-lHR" firstAttribute="top" secondItem="NgK-H5-xtL" secondAttribute="bottom" id="L0f-pJ-hh3"/>
+                            <constraint firstItem="6nD-ta-Baz" firstAttribute="leading" secondItem="3tx-th-HWu" secondAttribute="leadingMargin" id="N9p-Up-xUk"/>
+                            <constraint firstItem="PxN-S4-EjQ" firstAttribute="trailing" secondItem="wtq-ew-FtW" secondAttribute="trailing" id="PzZ-aS-cts"/>
+                            <constraint firstItem="f9v-7o-eeY" firstAttribute="centerX" secondItem="6nD-ta-Baz" secondAttribute="centerX" id="UaC-0j-hUh"/>
+                            <constraint firstItem="3dE-tc-n8P" firstAttribute="leading" secondItem="PxN-S4-EjQ" secondAttribute="leading" id="Wqr-J7-mo4"/>
+                            <constraint firstItem="3dE-tc-n8P" firstAttribute="top" secondItem="MR0-rl-lHR" secondAttribute="bottom" constant="198" id="XQe-Ge-Gua"/>
+                            <constraint firstItem="MR0-rl-lHR" firstAttribute="trailing" secondItem="NgK-H5-xtL" secondAttribute="trailing" id="Xd4-ZH-6oz"/>
+                            <constraint firstItem="NgK-H5-xtL" firstAttribute="top" secondItem="3tx-th-HWu" secondAttribute="top" id="Yci-xq-MTi"/>
+                            <constraint firstItem="wtq-ew-FtW" firstAttribute="top" secondItem="3dE-tc-n8P" secondAttribute="bottom" constant="47" id="bNi-k3-gJc"/>
+                            <constraint firstItem="MR0-rl-lHR" firstAttribute="leading" secondItem="NgK-H5-xtL" secondAttribute="leading" id="bi9-Rk-2or"/>
+                            <constraint firstItem="MR0-rl-lHR" firstAttribute="top" secondItem="PxN-S4-EjQ" secondAttribute="top" id="brM-73-FIj"/>
+                            <constraint firstItem="MR0-rl-lHR" firstAttribute="trailing" secondItem="3dE-tc-n8P" secondAttribute="trailing" id="egG-9J-rAL"/>
+                            <constraint firstItem="MR0-rl-lHR" firstAttribute="leading" secondItem="3dE-tc-n8P" secondAttribute="leading" id="op5-Lu-bXa"/>
+                            <constraint firstItem="wtq-ew-FtW" firstAttribute="leading" secondItem="PxN-S4-EjQ" secondAttribute="leading" id="uOv-nG-pVj"/>
+                            <constraint firstItem="MR0-rl-lHR" firstAttribute="top" secondItem="NgK-H5-xtL" secondAttribute="bottom" id="wQQ-Xx-08u"/>
+                            <constraint firstItem="3dE-tc-n8P" firstAttribute="trailing" secondItem="PxN-S4-EjQ" secondAttribute="trailing" id="xug-3n-IKr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="PxN-S4-EjQ"/>
                     </view>
+                    <connections>
+                        <outlet property="aboveNavBarView" destination="NgK-H5-xtL" id="sy7-V2-X0F"/>
+                        <outlet property="bottomConstraint" destination="2Gb-pw-ssu" id="XkH-ob-sTN"/>
+                        <outlet property="datePicker" destination="3dE-tc-n8P" id="fG0-bc-lvK"/>
+                        <outlet property="journalTextView" destination="f9v-7o-eeY" id="bKT-j0-9Bu"/>
+                        <outlet property="navBar" destination="MR0-rl-lHR" id="kQW-qW-Stv"/>
+                        <outlet property="setDate" destination="wtq-ew-FtW" id="jVo-8k-Gfj"/>
+                        <outlet property="stackView" destination="aMC-Ln-cln" id="tzw-Qc-0lO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WX4-8k-Rpm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1430" y="-1338"/>
+            <point key="canvasLocation" x="1230" y="-1569"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Th0-Ai-rvH">
@@ -192,6 +307,8 @@
     </scenes>
     <resources>
         <image name="add" width="384" height="384"/>
+        <image name="blueCamera" width="478.75323486328125" height="478.75323486328125"/>
+        <image name="calendar" width="409.60000610351562" height="409.60000610351562"/>
         <image name="photo-camera" width="384" height="384"/>
     </resources>
 </document>
