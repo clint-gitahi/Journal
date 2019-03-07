@@ -13,6 +13,7 @@ class CreateJournalViewController: UIViewController {
     @IBOutlet weak var setDate: UIButton!
     @IBOutlet weak var stackView: UIStackView!
     
+    var date = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,13 @@ class CreateJournalViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        navBar.topItem?.title = "March 10"
+        updateDate()
+    }
+    
+    func updateDate() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "E, MMM d, yyyy"
+        navBar.topItem?.title = formatter.string(from: date)
     }
     
     @objc func keyboardWillHide(notification: Notification) {
@@ -57,8 +64,16 @@ class CreateJournalViewController: UIViewController {
     }
     
     @IBAction func setDateTapped(_ sender: Any) {
+        journalTextView.isHidden = false
+        datePicker.isHidden = true
+        setDate.isHidden = true
+        date = datePicker.date
+        updateDate()
     }
     @IBAction func blueCalendarTapped(_ sender: Any) {
+        journalTextView.isHidden = true
+        datePicker.isHidden = false
+        setDate.isHidden = false
     }
     @IBAction func blueCameraTapped(_ sender: Any) {
     }
