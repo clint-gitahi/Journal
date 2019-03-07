@@ -30,6 +30,10 @@ class CreateJournalViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navBar.topItem?.title = "March 10"
+    }
+    
     @objc func keyboardWillHide(notification: Notification) {
         changeKeyboardHeight(notification: notification)
     }
