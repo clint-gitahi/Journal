@@ -7,4 +7,5 @@ target 'Journal' do
 
   # Pods for Journal
 pod 'RealmSwift'
+pod 'Toucan'
 end

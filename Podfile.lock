@@ -4,19 +4,23 @@ PODS:
   - Realm/Headers (3.13.1)
   - RealmSwift (3.13.1):
     - Realm (= 3.13.1)
+  - Toucan (1.1.0)
 
 DEPENDENCIES:
   - RealmSwift
+  - Toucan
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Realm
     - RealmSwift
+    - Toucan
 
 SPEC CHECKSUMS:
   Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
   RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
+  Toucan: 8f228fabb21521b9658692df9325fe76e71d74b2
 
-PODFILE CHECKSUM: f97fb0c6eb06954ab9f4c93d68d829d162dc9ae7
+PODFILE CHECKSUM: 9805b3376b1d0005a5c299b6c3def4cda9679239
 
 COCOAPODS: 1.5.3

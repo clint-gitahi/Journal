@@ -1,10 +1,4 @@
-//
-//  JournalTableViewController.swift
-//  Journal
-//
-//  Created by clinton gitahi on 05/03/2019.
-//  Copyright © 2019 clinton gitahi. All rights reserved.
-//
+
 
 import UIKit
 
@@ -27,6 +21,13 @@ class JournalTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("prepaing for segue")
+        if segue.identifier == "goToNew" {
+            if let text = sender as? String {
+                if text == "camera" {
+                    let createVC = segue.destination as? CreateJournalViewController
+                    createVC?.startWithCamera = true
+                }
+            }
+        }
     }
 }
