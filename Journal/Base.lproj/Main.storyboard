@@ -120,12 +120,72 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="2Qt-ug-kgI">
-                                <rect key="frame" x="0.0" y="228" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="97" id="2Qt-ug-kgI">
+                                <rect key="frame" x="0.0" y="228" width="375" height="97"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Qt-ug-kgI" id="aWi-3t-XcH">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="96.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i8v-ZM-xkb">
+                                            <rect key="frame" x="0.0" y="0.0" width="96.5" height="96.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="i8v-ZM-xkb" secondAttribute="height" multiplier="1:1" id="3q6-A4-Jje"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1X-dU-SnZ">
+                                            <rect key="frame" x="305" y="0.0" width="70" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="ivK-JZ-8IU"/>
+                                                <constraint firstAttribute="width" constant="70" id="mxp-hY-L71"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YWf-mi-2IB">
+                                            <rect key="frame" x="315" y="75.5" width="60" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="HdM-mV-UUJ"/>
+                                                <constraint firstAttribute="width" constant="60" id="bSl-JU-Jk6"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTD-uO-HCI">
+                                            <rect key="frame" x="305" y="21" width="70" height="54.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="70" id="v2D-61-8SL"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="909-4a-3U1">
+                                            <rect key="frame" x="102.5" y="0.0" width="196.5" height="96.5"/>
+                                            <string key="text">there was a time i used to look into my fathers eyes. those days are gone and we hould not talk about them bruh, so is the multiline enabled</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="i8v-ZM-xkb" firstAttribute="leading" secondItem="aWi-3t-XcH" secondAttribute="leading" id="1XQ-pj-dH7"/>
+                                        <constraint firstAttribute="trailing" secondItem="YWf-mi-2IB" secondAttribute="trailing" id="2Xs-5h-n8i"/>
+                                        <constraint firstItem="909-4a-3U1" firstAttribute="top" secondItem="aWi-3t-XcH" secondAttribute="top" id="DlS-uf-5Hg"/>
+                                        <constraint firstAttribute="bottom" secondItem="909-4a-3U1" secondAttribute="bottom" id="Pfy-lf-gCk"/>
+                                        <constraint firstItem="YWf-mi-2IB" firstAttribute="top" secondItem="wTD-uO-HCI" secondAttribute="bottom" id="PwG-M1-xWZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="wTD-uO-HCI" secondAttribute="trailing" id="UE3-Lt-DaB"/>
+                                        <constraint firstAttribute="bottom" secondItem="YWf-mi-2IB" secondAttribute="bottom" id="XRX-Va-uB5"/>
+                                        <constraint firstItem="909-4a-3U1" firstAttribute="leading" secondItem="i8v-ZM-xkb" secondAttribute="trailing" constant="6" id="Y5h-9h-IcT"/>
+                                        <constraint firstAttribute="trailing" secondItem="O1X-dU-SnZ" secondAttribute="trailing" id="eXr-5X-J6V"/>
+                                        <constraint firstItem="wTD-uO-HCI" firstAttribute="top" secondItem="O1X-dU-SnZ" secondAttribute="bottom" id="gQa-jl-hdR"/>
+                                        <constraint firstItem="O1X-dU-SnZ" firstAttribute="top" secondItem="aWi-3t-XcH" secondAttribute="top" id="i5k-7U-hec"/>
+                                        <constraint firstItem="wTD-uO-HCI" firstAttribute="leading" secondItem="909-4a-3U1" secondAttribute="trailing" constant="6" id="sO3-Fj-SAI"/>
+                                        <constraint firstAttribute="bottom" secondItem="i8v-ZM-xkb" secondAttribute="bottom" id="sTk-A9-c2v"/>
+                                        <constraint firstItem="i8v-ZM-xkb" firstAttribute="top" secondItem="aWi-3t-XcH" secondAttribute="top" id="xnb-4y-tj7"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
