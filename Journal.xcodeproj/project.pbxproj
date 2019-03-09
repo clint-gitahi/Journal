@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		22D70446EF8DA3781F05E0F8 /* Pods_Journal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99798CB6DD38AA61F5DA96C7 /* Pods_Journal.framework */; };
+		2B060F562233581400CE5F2D /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B060F552233581400CE5F2D /* SplitViewController.swift */; };
 		2B77B2292231532400C5E72F /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B77B2282231532400C5E72F /* Models.swift */; };
 		2B7E33FD222E29DF004A2BC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E33FC222E29DF004A2BC4 /* AppDelegate.swift */; };
 		2B7E33FF222E29DF004A2BC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E33FE222E29DF004A2BC4 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B060F552233581400CE5F2D /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		2B77B2282231532400C5E72F /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		2B7E33F9222E29DF004A2BC4 /* Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Journal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B7E33FC222E29DF004A2BC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				2B7E33FC222E29DF004A2BC4 /* AppDelegate.swift */,
 				2B7E33FE222E29DF004A2BC4 /* ViewController.swift */,
 				2B7E3400222E29DF004A2BC4 /* Main.storyboard */,
+				2B060F552233581400CE5F2D /* SplitViewController.swift */,
 				2BF4433C222EA41F00243A83 /* JournalTableViewController.swift */,
 				2BF4433E222EA46500243A83 /* CreateJournalViewController.swift */,
 				2BF44340222EA48C00243A83 /* PhotoCollectionViewController.swift */,
@@ -226,6 +229,7 @@
 				2B7E33FD222E29DF004A2BC4 /* AppDelegate.swift in Sources */,
 				2BF4433F222EA46500243A83 /* CreateJournalViewController.swift in Sources */,
 				2B77B2292231532400C5E72F /* Models.swift in Sources */,
+				2B060F562233581400CE5F2D /* SplitViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

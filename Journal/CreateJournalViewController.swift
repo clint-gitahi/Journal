@@ -18,12 +18,12 @@ class CreateJournalViewController: UIViewController, UIImagePickerControllerDele
     var imagePicker = UIImagePickerController()
     var images : [UIImage] = []
     var startWithCamera = false
+    var entry = Entry()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navBar.barTintColor = UIColor(red: 0.298, green: 0.757, blue: 0.988, alpha: 1.00)
-        
         navBar.tintColor = .white
         navBar.isTranslucent = false
         navBar.titleTextAttributes = [.foregroundColor: UIColor.white]
@@ -49,9 +49,7 @@ class CreateJournalViewController: UIViewController, UIImagePickerControllerDele
     }
     
     func updateDate() {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "E, MMM d, yyyy"
-        navBar.topItem?.title = formatter.string(from: date)
+        navBar.topItem?.title = entry.datePrettyString()
     }
     
     @objc func keyboardWillHide(notification: Notification) {
@@ -75,9 +73,7 @@ class CreateJournalViewController: UIViewController, UIImagePickerControllerDele
     
     @IBAction func saveTapped(_ sender: Any) {
         if let realm = try? Realm() {
-            let entry = Entry()
             entry.text = journalTextView.text
-            entry.date = date
             for image in images {
                 let picture = Picture(image: image)
                 entry.pictures.append(picture)
@@ -96,13 +92,14 @@ class CreateJournalViewController: UIViewController, UIImagePickerControllerDele
         journalTextView.isHidden = false
         datePicker.isHidden = true
         setDate.isHidden = true
-        date = datePicker.date
+        entry.date = datePicker.date
         updateDate()
     }
     @IBAction func blueCalendarTapped(_ sender: Any) {
         journalTextView.isHidden = true
         datePicker.isHidden = false
         setDate.isHidden = false
+        datePicker.date = entry.date
     }
     @IBAction func blueCameraTapped(_ sender: Any) {
         imagePicker.sourceType = .photoLibrary

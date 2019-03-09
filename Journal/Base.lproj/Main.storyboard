@@ -60,11 +60,11 @@
             </objects>
             <point key="canvasLocation" x="-412" y="-650"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Journal-->
         <scene sceneID="qp0-xM-uri">
             <objects>
                 <tabBarController id="NlA-d2-7BE" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="k7Z-JH-1jx"/>
+                    <navigationItem key="navigationItem" title="Journal" id="k7Z-JH-1jx"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="U7d-FF-2N5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -79,7 +79,7 @@
             </objects>
             <point key="canvasLocation" x="-412" y="-1338"/>
         </scene>
-        <!--Item-->
+        <!--Journals-->
         <scene sceneID="NRj-2e-Mfv">
             <objects>
                 <tableViewController id="kWY-2T-yJc" customClass="JournalTableViewController" customModule="Journal" customModuleProvider="target" sceneMemberID="viewController">
@@ -120,7 +120,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="97" id="2Qt-ug-kgI">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="journalCell" rowHeight="97" id="2Qt-ug-kgI" customClass="JournalCell" customModule="Journal" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="228" width="375" height="97"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Qt-ug-kgI" id="aWi-3t-XcH">
@@ -128,9 +128,9 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i8v-ZM-xkb">
-                                            <rect key="frame" x="0.0" y="0.0" width="96.5" height="96.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="96.5"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="i8v-ZM-xkb" secondAttribute="height" multiplier="1:1" id="3q6-A4-Jje"/>
+                                                <constraint firstAttribute="width" constant="100" id="7Kn-5C-agM"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1X-dU-SnZ">
@@ -163,7 +163,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="909-4a-3U1">
-                                            <rect key="frame" x="102.5" y="0.0" width="196.5" height="96.5"/>
+                                            <rect key="frame" x="106" y="0.0" width="193" height="96.5"/>
                                             <string key="text">there was a time i used to look into my fathers eyes. those days are gone and we hould not talk about them bruh, so is the multiline enabled</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
@@ -187,6 +187,14 @@
                                         <constraint firstItem="i8v-ZM-xkb" firstAttribute="top" secondItem="aWi-3t-XcH" secondAttribute="top" id="xnb-4y-tj7"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dayLabel" destination="wTD-uO-HCI" id="KwK-if-czp"/>
+                                    <outlet property="imageViewWidth" destination="7Kn-5C-agM" id="11J-86-W9r"/>
+                                    <outlet property="monthLabel" destination="O1X-dU-SnZ" id="pOB-ha-gFS"/>
+                                    <outlet property="previewImageView" destination="i8v-ZM-xkb" id="WHk-IZ-fng"/>
+                                    <outlet property="previewTextLabel" destination="909-4a-3U1" id="ivV-zV-2CA"/>
+                                    <outlet property="yearLabel" destination="YWf-mi-2IB" id="M5W-h5-3O6"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -195,9 +203,11 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="94c-E5-atA"/>
+                    <navigationItem key="navigationItem" title="Journals" id="Zhn-GS-Vtc"/>
                     <connections>
                         <outlet property="addButton" destination="qaN-Kn-Bp6" id="Ovk-Fj-okf"/>
                         <outlet property="cameraButton" destination="A2o-o1-EjY" id="uYz-Vw-bRM"/>
+                        <outlet property="headerView" destination="Jkp-B3-IKc" id="hLv-CN-S21"/>
                         <segue destination="bKS-NB-5Ld" kind="presentation" identifier="goToNew" id="bIK-3F-uyH"/>
                     </connections>
                 </tableViewController>
@@ -214,17 +224,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MR0-rl-lHR">
-                                <rect key="frame" x="0.0" y="20" width="375" height="0.0"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="zSm-rV-H40"/>
+                                </constraints>
                                 <items>
                                     <navigationItem title="Title" id="bub-zc-euf">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="OGh-oh-cra">
                                             <connections>
-                                                <action selector="cancelTapped:" destination="bKS-NB-5Ld" id="Pdu-Za-Qb0"/>
+                                                <action selector="cancelTapped:" destination="bKS-NB-5Ld" id="gor-jI-sYR"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Lod-Pe-vbL">
                                             <connections>
-                                                <action selector="saveTapped:" destination="bKS-NB-5Ld" id="pc8-Yb-oOl"/>
+                                                <action selector="saveTapped:" destination="bKS-NB-5Ld" id="4mV-86-8ah"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -235,7 +248,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="f9v-7o-eeY">
-                                <rect key="frame" x="0.0" y="68" width="375" height="466"/>
+                                <rect key="frame" x="0.0" y="128" width="375" height="466"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="466" id="eAK-x6-U4Q"/>
@@ -245,26 +258,26 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtq-ew-FtW">
-                                <rect key="frame" x="0.0" y="481" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="541" width="375" height="30"/>
                                 <state key="normal" title="Set Date"/>
                                 <connections>
                                     <action selector="setDateTapped:" destination="bKS-NB-5Ld" eventType="touchUpInside" id="CL7-Tg-7VG"/>
                                 </connections>
                             </button>
                             <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="3dE-tc-n8P">
-                                <rect key="frame" x="0.0" y="218" width="375" height="216"/>
+                                <rect key="frame" x="0.0" y="278" width="375" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="573534821.68177605">
                                     <!--2019-03-06 03:13:41 +0000-->
                                 </date>
                             </datePicker>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6nD-ta-Baz">
-                                <rect key="frame" x="16" y="542" width="343" height="105"/>
+                                <rect key="frame" x="16" y="602" width="343" height="45"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aMC-Ln-cln">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="105"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="45"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9eQ-Y0-IrV">
-                                                <rect key="frame" x="0.0" y="0.0" width="70" height="105"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="45"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="Ysl-dq-wzo"/>
                                                 </constraints>
@@ -274,7 +287,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6mw-1u-Lly">
-                                                <rect key="frame" x="80" y="0.0" width="70" height="105"/>
+                                                <rect key="frame" x="80" y="0.0" width="70" height="45"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="axC-hG-uni"/>
                                                 </constraints>
@@ -342,6 +355,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="II9-Ip-Dcp">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="NlA-d2-7BE" kind="relationship" relationship="rootViewController" id="cPa-qn-NLL"/>
