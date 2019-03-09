@@ -370,7 +370,7 @@
         <!--Split View Controller-->
         <scene sceneID="Jw6-Hj-oXN">
             <objects>
-                <splitViewController id="W7z-Tt-hO0" sceneMemberID="viewController">
+                <splitViewController id="W7z-Tt-hO0" customClass="SplitViewController" customModule="Journal" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <segue destination="YH3-ZA-KDj" kind="relationship" relationship="masterViewController" id="pr7-fr-4Xe"/>
                         <segue destination="mtK-jV-E3j" kind="relationship" relationship="detailViewController" id="1UI-2N-fdw"/>
