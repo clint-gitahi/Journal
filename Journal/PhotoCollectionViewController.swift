@@ -1,58 +1,55 @@
-//
-//  PhotoCollectionViewController.swift
-//  Journal
-//
-//  Created by clinton gitahi on 05/03/2019.
-//  Copyright © 2019 clinton gitahi. All rights reserved.
-//
-
 import UIKit
+import RealmSwift
 
 private let reuseIdentifier = "Cell"
 
-class PhotoCollectionViewController: UICollectionViewController {
+class PhotoCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    
+    var pictures : Results<Picture>?
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+    override func viewWillAppear(_ animated: Bool) {
+        getPictures()
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+    
+    func getPictures() {
+        if let realm = try? Realm() {
+            pictures = realm.objects(Picture.self)
+            
+            collectionView?.reloadData()
+        }
     }
-    */
 
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
+        if let pictures = self.pictures {
+            return pictures.count
+        }
         return 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as? PhotoCell {
+            
+            if let picture = pictures? [indexPath.row] {
+                cell.previewImageVeiw.image = picture.thumbnail()
+                cell.dayLabel.text = picture.entry?.dayString()
+                cell.monthYearLabel.text = picture.entry?.monthYearString()
+            }
+            
+            return cell
+        }
+        return UICollectionViewCell()
+    }
     
-        // Configure the cell
-    
-        return cell
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.size.width/2, height: collectionView.frame.size.width/2)
     }
 
     // MARK: UICollectionViewDelegate
@@ -86,4 +83,11 @@ class PhotoCollectionViewController: UICollectionViewController {
     }
     */
 
+}
+
+class PhotoCell : UICollectionViewCell {
+    
+    @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet weak var monthYearLabel: UILabel!
+    @IBOutlet weak var previewImageVeiw: UIImageView!
 }
