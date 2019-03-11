@@ -2,6 +2,7 @@
 
 import UIKit
 import RealmSwift
+import Spring
 
 class CreateJournalViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -112,7 +113,7 @@ class CreateJournalViewController: UIViewController, UIImagePickerControllerDele
             images.append(chosenImage)
             
             //adding image to the stack view.
-            let imageView = UIImageView()
+            let imageView = SpringImageView()
             imageView.heightAnchor.constraint(equalToConstant: 70.0).isActive = true
             imageView.widthAnchor.constraint(equalToConstant: 70.0).isActive = true
             imageView.image = chosenImage
@@ -121,7 +122,9 @@ class CreateJournalViewController: UIViewController, UIImagePickerControllerDele
             stackView.addArrangedSubview(imageView)
             imagePicker.dismiss(animated:true) {
                 // animation
-                
+                imageView.animation = "pop"
+                imageView.duration = 2.0
+                imageView.animate()
             }
         }
     }

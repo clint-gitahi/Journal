@@ -65,7 +65,7 @@
             </objects>
             <point key="canvasLocation" x="-1191.2" y="-561.76911544227892"/>
         </scene>
-        <!--Item-->
+        <!--Photos-->
         <scene sceneID="Ljn-kh-8UP">
             <objects>
                 <collectionViewController id="cAw-MX-rXx" customClass="PhotoCollectionViewController" customModule="Journal" customModuleProvider="target" sceneMemberID="viewController">
@@ -133,7 +133,7 @@
                             <outlet property="delegate" destination="cAw-MX-rXx" id="DTa-MW-824"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Item" id="GsA-dF-cKS"/>
+                    <tabBarItem key="tabBarItem" title="Photos" image="camera" id="GsA-dF-cKS"/>
                     <connections>
                         <segue destination="mtK-jV-E3j" kind="showDetail" identifier="photoToDetail" id="cBz-1J-yPM"/>
                     </connections>
@@ -284,7 +284,7 @@
                             <outlet property="delegate" destination="kWY-2T-yJc" id="hsC-Yd-J7m"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="94c-E5-atA"/>
+                    <tabBarItem key="tabBarItem" title="List" image="database" id="94c-E5-atA"/>
                     <navigationItem key="navigationItem" title="Journals" id="Zhn-GS-Vtc"/>
                     <connections>
                         <outlet property="addButton" destination="qaN-Kn-Bp6" id="Ovk-Fj-okf"/>
@@ -468,6 +468,8 @@
         <image name="add" width="384" height="384"/>
         <image name="blueCamera" width="478.75323486328125" height="478.75323486328125"/>
         <image name="calendar" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="camera" width="30" height="30"/>
+        <image name="database" width="30" height="30"/>
         <image name="photo-camera" width="384" height="384"/>
     </resources>
     <inferredMetricsTieBreakers>

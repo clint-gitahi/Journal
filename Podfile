@@ -8,4 +8,5 @@ target 'Journal' do
   # Pods for Journal
 pod 'RealmSwift'
 pod 'Toucan'
+pod 'Spring', '~> 1.0.5'
 end
